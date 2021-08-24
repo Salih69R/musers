@@ -13,6 +13,8 @@
 //tags system
 
   
+
+  
   //we use unique string id for every kind of user, but still important to know what kind he is
   class user_entity_id{
   final String id_text; //this can be user email/band name/ buisness name/ any other unique id of a new entity in the future
@@ -78,7 +80,6 @@ class post{
   final user_entity_id poster_id;
   final String post_text;
   final String post_id;
-  //private String imageUrl;
   final String date;
   final String time;
   
@@ -94,7 +95,22 @@ class post{
   double comments_num = 0;
 }
 
-class comment{}
+class comment{
+  final user_entity_id commenter_id;
+  final String comment_id;
+  String comment_text;
+  final String date;
+  final String time;
+  comment(this.commenter_id, this.comment_id, this.comment_text, this.date, this.time);
+
+  // this class is a json template, so we won't save the datasets that can grow exp here(only in db)
+  // List<media> medias;
+  // List<comment> replies;
+  // List<unique_id> likers;
+  //back in java, we needed these to be in double to atomically inc/dec effeciently, do we still in flutter?
+  double likes_num = 0;
+  double replies_num = 0;
+}
 
 class media{}
 

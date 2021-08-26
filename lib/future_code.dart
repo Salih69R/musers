@@ -2,6 +2,18 @@
 
 //this file is used to partially create and discuss and think about new code/logic to add
 
+
+//open questions to continue work:
+//1. what db? firebase - firestore? backendless? mangodb
+//2. what features? use user stories for backlog
+  
+
+
+//3. (scribble the) classes and data strucs logic
+//4. implemtation + styling and gui
+
+
+
 //post_list_viewer widget -  this should take iterable<post> and show (according to some style) a (maybe infinite) listview
 
 //story_viewer widget
@@ -14,7 +26,7 @@
 
   
 
-  
+
   //we use unique string id for every kind of user, but still important to know what kind he is
   class user_entity_id{
   final String id_text; //this can be user email/band name/ buisness name/ any other unique id of a new entity in the future
@@ -22,6 +34,7 @@
 
   user_entity_id(this.id_text, this.type);//this can be user/band/buisiness...
 }
+
 
 //db json objects:
   //user, band
@@ -56,10 +69,11 @@ class user{
  
 class band{
   //band id/userid
+  final user_entity_id id;
   List<String> members_emails;
-  String band_name; //unique
+  String band_name; 
 
-  band(this.members_emails, this.band_name);
+  band(this.id, this.members_emails, this.band_name);
 
   String profile_image = "";
   String status = "I'm a new Muser!";
@@ -112,10 +126,19 @@ class comment{
   double replies_num = 0;
 }
 
-class media{}
+
+class media{
+//videos (after compressing them)
+//image
+//sound
+//map locations??
+//links?
+}
 
 //writing @name in a comment or a message, should notify the mentioned entity
-class mention{}
+class mention{
+  
+}
 
 
 //chat, message, ...?

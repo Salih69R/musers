@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musers/screens/loading_screen.dart';
+import 'package:musers/screens/login_screen.dart';
 import 'screens/register_screen.dart';
 
 void main() {
@@ -28,9 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-    return LoadingScreen();
+    return LoginScreen();
   }
 }
